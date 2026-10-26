@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102b33">
+  <meta name="description" content="The NIT Jamshedpur 1998 batch reunion: attendee information, registrations, memories and ways to get involved.">
+  <title>Attendee Actions | NIT Jamshedpur 1998 Batch</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #152e34;
+      --muted: #5b6d6e;
+      --paper: #f7f4ec;
+      --card: #fffefa;
+      --teal: #164750;
+      --teal-dark: #102b33;
+      --coral: #e5755b;
+      --gold: #efc77a;
+      --line: #e4e0d6;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "Segoe UI", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--coral);
+      outline-offset: 4px;
+    }
+    .shell { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+
+    .topbar {
+      position: relative;
+      z-index: 1;
+      background: var(--teal-dark);
+      color: #f8f4e9;
+    }
+    .nav-wrap {
+      display: flex;
+      min-height: 76px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: inherit;
+      font-weight: 700;
+      letter-spacing: .02em;
+      text-decoration: none;
+    }
+    .brand-mark {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 1px solid rgba(239, 199, 122, .8);
+      border-radius: 50%;
+      color: var(--gold);
+      font-family: var(--serif);
+      font-size: 17px;
+    }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 26px; }
+    .nav-links a {
+      color: #e8eeea;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 82% 34%, rgba(239, 199, 122, .18), transparent 26%),
+        radial-gradient(ellipse at 78% 40%, transparent 0 27%, rgba(239, 199, 122, .12) 27.2% 27.5%, transparent 27.8% 34%, rgba(239, 199, 122, .09) 34.2% 34.5%, transparent 34.8%),
+        linear-gradient(125deg, #102b33 0%, #164750 72%, #1c5055 100%);
+      color: #fffefa;
+    }
+    .hero::after {
+      position: absolute;
+      right: -95px;
+      bottom: -240px;
+      width: 560px;
+      height: 560px;
+      border: 1px solid rgba(239, 199, 122, .16);
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      min-height: 440px;
+      align-content: center;
+      justify-items: start;
+      padding-block: 78px 88px;
+    }
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, .serif { font-family: var(--serif); font-weight: 400; }
+    h1 {
+      max-width: 750px;
+      margin-bottom: 20px;
+      font-size: clamp(48px, 8vw, 86px);
+      letter-spacing: -.045em;
+      line-height: .98;
+    }
+    .hero-copy {
+      max-width: 570px;
+      margin-bottom: 30px;
+      color: #d9e2df;
+      font-size: clamp(16px, 2vw, 19px);
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 20px;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      background: var(--gold);
+      color: var(--teal-dark);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .18s ease, background .18s ease;
+    }
+    .button:hover { transform: translateY(-2px); background: #f5d99e; }
+    .button-outline {
+      border-color: rgba(255, 255, 255, .45);
+      background: transparent;
+      color: #fffefa;
+    }
+    .button-outline:hover { background: rgba(255, 255, 255, .1); }
+    .hero-note { margin: 19px 0 0; color: #d9e2df; font-size: 13px; }
+
+    .event-strip {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: -34px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      box-shadow: 0 12px 35px rgba(21, 46, 52, .08);
+    }
+    .event-detail { padding: 22px 28px; }
+    .event-detail + .event-detail { border-left: 1px solid var(--line); }
+    .detail-label {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .detail-value { font-family: var(--serif); font-size: 19px; }
+
+    main { padding-block: 88px 100px; }
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 36px;
+    }
+    .section-heading h2 {
+      margin-bottom: 8px;
+      font-size: clamp(36px, 5vw, 53px);
+      letter-spacing: -.035em;
+      line-height: 1.08;
+    }
+    .section-heading p { max-width: 480px; margin-bottom: 4px; color: var(--muted); }
+    .section-kicker {
+      margin-bottom: 10px;
+      color: #b95843;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    .action-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .action-card {
+      min-height: 270px;
+      padding: 27px 27px 24px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .action-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(21, 46, 52, .08); }
+    .card-number {
+      display: inline-grid;
+      width: 38px;
+      height: 38px;
+      margin-bottom: 20px;
+      place-items: center;
+      border-radius: 50%;
+      background: #f5e8ca;
+      color: #754f1a;
+      font-family: var(--serif);
+      font-size: 17px;
+    }
+    .action-card h3 { margin-bottom: 9px; font-family: var(--serif); font-size: 23px; font-weight: 400; }
+    .action-card p { min-height: 52px; margin-bottom: 18px; color: var(--muted); font-size: 14px; }
+    .photo-card { grid-column: 1 / -1; }
+    .reunion-invite {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      align-items: center;
+      gap: clamp(24px, 5vw, 56px);
+      padding: clamp(20px, 4vw, 38px);
+      background: #f0e7d5;
+    }
+    .reunion-invite img { display: block; width: 100%; height: auto; }
+    .reunion-invite blockquote {
+      margin: 0;
+      color: var(--teal-dark);
+      font-family: var(--serif);
+      font-size: clamp(25px, 3.5vw, 40px);
+      line-height: 1.2;
+    }
+    .reunion-invite blockquote p { min-height: 0; margin: 0 0 18px; }
+    .reunion-invite figcaption { color: var(--muted); font-family: var(--sans); font-size: 14px; }
+    .photo-intro { max-width: 760px; }
+    .photo-types { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 20px 0 24px; }
+    .photo-type { padding: 17px 19px; background: #f3f1e9; }
+    .photo-type h4, .photo-submission h4 {
+      margin: 0 0 5px;
+      color: var(--teal);
+      font-size: 12px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .photo-type p { min-height: 0; margin: 0; }
+    .photo-submission { padding-top: 20px; border-top: 1px solid var(--line); }
+    .photo-submission ol { display: grid; gap: 9px; margin: 12px 0 0; padding-left: 22px; color: var(--muted); font-size: 14px; }
+    .photo-submission li { padding-left: 3px; }
+    .photo-submission a { color: var(--teal); font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .photo-submission .email-subject { display: block; margin-top: 3px; }
+    .poster-link {
+      display: block;
+      width: fit-content;
+      margin-top: 18px;
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .poster-link img {
+      display: block;
+      max-width: min(100%, 120px);
+      max-height: 160px;
+      margin-bottom: 8px;
+      border: 1px solid var(--line);
+      object-fit: contain;
+    }
+    .poster-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .text-link::after { content: "→"; font-size: 18px; transition: transform .18s ease; }
+    .text-link:hover::after { transform: translateX(4px); }
+
+    .help-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(250px, .9fr);
+      gap: 45px;
+      margin-top: 80px;
+      padding: clamp(28px, 5vw, 54px);
+      background: #e9eee8;
+    }
+    .help-panel h2 { margin-bottom: 12px; font-size: clamp(32px, 4vw, 43px); line-height: 1.1; }
+    .help-panel p { margin-bottom: 0; color: #506367; }
+    .help-aside {
+      align-self: center;
+      padding-left: 26px;
+      border-left: 2px solid var(--coral);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 27px 0;
+      background: var(--teal-dark);
+      color: #d9e2df;
+      font-size: 13px;
+    }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+    footer p { margin: 0; }
+    footer a { color: var(--gold); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+    @media (max-width: 760px) {
+      .nav-wrap { align-items: flex-start; flex-direction: column; padding-block: 17px; gap: 13px; }
+      .nav-links { gap: 10px 19px; }
+      .hero-inner { min-height: 390px; padding-block: 62px 76px; }
+      .event-strip { grid-template-columns: 1fr; margin-top: -22px; }
+      .event-detail { padding: 16px 20px; }
+      .event-detail + .event-detail { border-top: 1px solid var(--line); border-left: 0; }
+      main { padding-block: 66px 72px; }
+      .section-heading { align-items: flex-start; flex-direction: column; gap: 6px; }
+      .action-grid { grid-template-columns: repeat(2, 1fr); }
+      .photo-card { grid-column: 1 / -1; }
+      .reunion-invite { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+      .help-panel { grid-template-columns: 1fr; gap: 25px; margin-top: 56px; }
+      .help-aside { padding-left: 18px; }
+    }
+    @media (max-width: 520px) {
+      .shell { width: min(100% - 30px, 1120px); }
+      .nav-links { gap: 8px 14px; }
+      .nav-links a { font-size: 13px; }
+      .hero-actions { align-items: stretch; flex-direction: column; width: 100%; }
+      .hero-actions .button { width: 100%; }
+      .action-grid { grid-template-columns: 1fr; }
+      .photo-card { grid-column: auto; }
+      .reunion-invite { grid-template-columns: 1fr; }
+      .photo-types { grid-template-columns: 1fr; }
+      .action-card { min-height: auto; }
+      .action-card p { min-height: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell nav-wrap">
+      <a class="brand" href="#top" aria-label="NIT Jamshedpur 1998 Batch home">
+        <span class="brand-mark" aria-hidden="true">98</span>
+        <span>NIT Jamshedpur · 1998 Batch</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#top">Home</a>
+        <a href="#attendee-actions">Attendee actions</a>
+        <a href="#get-in-touch">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="shell hero-inner">
+      <p class="eyebrow">The years may have moved on. The friendships haven't.</p>
+      <h1>Class of '98.<br>A lifetime of stories.</h1>
+      <p class="hero-copy">Let’s come together again, remember where it all began, and make a few new memories along the way.</p>
+      <div class="hero-actions">
+        <a class="button" href="#attendee-actions">Explore attendee actions</a>
+        <a class="button button-outline" href="#get-in-touch">Help shape the reunion</a>
+      </div>
+      <p class="hero-note">24–26 January 2027 · Jamshedpur, Jharkhand</p>
+    </div>
+  </section>
+
+  <div class="shell">
+    <section class="event-strip" aria-label="Reunion details">
+      <div class="event-detail">
+        <span class="detail-label">When</span>
+        <span class="detail-value">24–26 January 2027</span>
+      </div>
+      <div class="event-detail">
+        <span class="detail-label">Where</span>
+        <span class="detail-value">Jamshedpur, Jharkhand</span>
+      </div>
+      <div class="event-detail">
+        <span class="detail-label">Who</span>
+        <span class="detail-value">NIT Jamshedpur · 1998 batch</span>
+      </div>
+    </section>
+  </div>
+
+  <main class="shell">
+    <section id="attendee-actions" aria-labelledby="actions-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">Your reunion, your way</p>
+          <h2 id="actions-title">A few things to do<br>before we meet</h2>
+        </div>
+        <p>Help us bring everyone together. Sign-ups, photo uploads and event links will appear here as they’re ready.</p>
+      </div>
+
+      <div class="action-grid">
+        <article class="action-card">
+          <span class="card-number" aria-hidden="true">01</span>
+          <h3>College alumni meet</h3>
+          <p>Monday, 25 January 2027 at Students Gymkhana (TSG). Join the official NIT Jamshedpur Alumni Meet.</p>
+          <a class="text-link" href="https://forms.gle/fpHNY3bjDFQAuhKA7" target="_blank" rel="noopener noreferrer">Register for the alumni meet</a>
+          <a class="poster-link" href="assets/nit-alumni-meet-2027.jpeg" target="_blank" rel="noopener">
+            <img src="assets/nit-alumni-meet-2027.jpeg" alt="NIT Jamshedpur Alumni Meet 2027 invitation poster">
+            View the full invitation
+          </a>
+        </article>
+        <article class="action-card">
+          <span class="card-number" aria-hidden="true">02</span>
+          <h3>Gala Night (25th Jan) Details</h3>
+          <p>Details and registration information for the 98 batch gala night.</p>
+          <a class="text-link" href="https://docs.google.com/forms/d/e/1FAIpQLSetAZqlYaNjGVwuNvZPO7QMzN5zVc0ys6N78qeL8-1ho8f0zQ/viewform" target="_blank" rel="noopener noreferrer">NIT JSR Silver Jubilee Reunion 2027 — Registration Form</a>
+        </article>
+        <article class="action-card photo-card">
+          <span class="card-number" aria-hidden="true">03</span>
+          <h3>Share your photos</h3>
+          <p class="photo-intro">This section collects photos for the Silver Jubilee Coffee Table Book and the permanent Memory Archive.</p>
+          <div class="photo-types">
+            <div class="photo-type">
+              <h4>Then</h4>
+              <p>Your college-era photos—hostel life, farewell nights, trips, fests and labs.</p>
+            </div>
+            <div class="photo-type">
+              <h4>Now</h4>
+              <p>A recent photo of you (and family, if attending) for your profile page.</p>
+            </div>
+          </div>
+          <div class="photo-submission">
+            <h4>Important — how to submit photos</h4>
+            <ol>
+              <li>For best quality, upload photos directly to our <a href="https://drive.google.com/drive/folders/1ZvdDJgyllZ_zcfkR64XnXTyPCm6oKxP1" target="_blank" rel="noopener noreferrer">shared Google Drive folder</a>. Google Forms has a file size limit.</li>
+              <li>Name your files <strong>YOURNAME_THEN_01.jpg</strong> or <strong>YOURNAME_NOW_01.jpg</strong>.</li>
+              <li>Alternatively, email high-resolution photos to <a href="mailto:nitjsr2027silverjubilee@gmail.com?subject=PHOTOS%20%E2%80%93%20%5BYour%20Name%5D%20%E2%80%93%20%5BBranch%5D">nitjsr2027silverjubilee@gmail.com</a>.
+                <span class="email-subject">Subject: “PHOTOS – [Your Name] – [Branch]”</span>
+              </li>
+            </ol>
+          </div>
+        </article>
+        <article class="action-card">
+          <span class="card-number" aria-hidden="true">04</span>
+          <h3>Join an activity</h3>
+          <p>Put your name forward for sports, performances, quizzes and other get-togethers.</p>
+          <span class="text-link" aria-label="Activity sign-up link coming soon">Sign-up link coming soon</span>
+        </article>
+        <article class="action-card">
+          <span class="card-number" aria-hidden="true">05</span>
+          <h3>Share your journey</h3>
+          <p>Tell us what the years since college have brought—one slide, a few photos, your story.</p>
+          <a class="text-link" href="assets/individual-intro-page-template-1998-batch.pptx" download>Download the intro page template</a>
+          <a class="text-link" href="https://drive.google.com/drive/folders/1pgfr7zmsqPyOiEEkGcEfmyFgHYWQehxF?usp=drive_link" target="_blank" rel="noopener noreferrer">Upload your completed slide</a>
+        </article>
+        <figure class="action-card reunion-invite">
+          <img src="assets/college-life-reunion.png" alt="A humorous illustration of college friends gathered in a dorm room">
+          <figcaption>
+            <blockquote>
+              <p>“We survived hostel life, questionable mess food, and exams we swore we’d study for. Surely we can survive one reunion!”</p>
+            </blockquote>
+            Come join us—bring your old stories and your current haircut.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="help-panel" id="get-in-touch" aria-labelledby="help-title">
+      <div>
+        <p class="section-kicker">Let’s make it happen</p>
+        <h2 id="help-title">Have a question or an idea?</h2>
+        <p>We’re bringing the 98 batch back together. If you can help with planning, reconnecting classmates, or collecting memories, we’d love to hear from you.</p>
+      </div>
+      <p class="help-aside">Organizer contact details and the batch communication-group link will be added here. Check back for updates.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <p>NIT Jamshedpur · 1998 Batch Reunion</p>
+      <p>Made for old friends and new memories.</p>
+    </div>
+  </footer>
+</body>
+</html>

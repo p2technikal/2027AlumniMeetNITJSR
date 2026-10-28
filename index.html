@@ -364,6 +364,29 @@
       background: #fff;
     }
 
+    .day-plan {
+      margin-top: 80px;
+      padding: clamp(24px, 4vw, 42px);
+      border: 1px solid var(--line);
+      background: var(--card);
+    }
+    .day-plan h2 {
+      margin-bottom: 22px;
+      font-size: clamp(34px, 5vw, 48px);
+      letter-spacing: -.035em;
+      line-height: 1.08;
+    }
+    .plan-table-wrap { overflow-x: auto; border: 1px solid var(--line); }
+    .plan-table { width: 100%; border-collapse: collapse; min-width: 700px; }
+    .plan-table th, .plan-table td { padding: 16px 18px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .plan-table th { background: var(--teal-dark); color: #fffefa; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+    .plan-table td { color: var(--muted); font-size: 14px; }
+    .plan-table tbody tr:nth-child(even) { background: #f5f2e9; }
+    .plan-table tbody tr:last-child td { border-bottom: 0; }
+    .plan-table .plan-day { color: var(--teal-dark); font-family: var(--serif); font-size: 17px; font-weight: 700; }
+    .plan-table .plan-time { color: var(--coral); font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    .plan-table ul { margin: 8px 0 0; padding-left: 18px; }
+
     .help-panel {
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(250px, .9fr);
@@ -405,6 +428,8 @@
       .action-grid { grid-template-columns: repeat(2, 1fr); }
       .photo-card { grid-column: 1 / -1; }
       .reunion-invite { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+      .day-plan { margin-top: 56px; }
+      .plan-table th, .plan-table td { padding: 13px 14px; }
       .help-panel { grid-template-columns: 1fr; gap: 25px; margin-top: 56px; }
       .help-aside { padding-left: 18px; }
     }
@@ -566,6 +591,59 @@
             Come join us—bring your old stories and your current haircut.
           </figcaption>
         </figure>
+      </div>
+    </section>
+
+    <section class="day-plan" aria-labelledby="day-plan-title">
+      <p class="section-kicker">Schedule</p>
+      <h2 id="day-plan-title">Day-wise plan <span class="serif">(tentative)</span></h2>
+      <div class="plan-table-wrap">
+        <table class="plan-table">
+          <thead>
+            <tr>
+              <th scope="col">Day</th>
+              <th scope="col">Time</th>
+              <th scope="col">Plan as of now</th>
+              <th scope="col">Pre-requisite / Note</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="plan-day" rowspan="2">24 Jan<br><small>(Saturday)</small></td>
+              <td class="plan-time">Afternoon</td>
+              <td>Arrival and Check-in</td>
+              <td>Travel plans and accommodation booking</td>
+            </tr>
+            <tr>
+              <td class="plan-time">Evening</td>
+              <td>Open</td>
+              <td>Have a plan for the batch—reach out to the organizers.</td>
+            </tr>
+            <tr>
+              <td class="plan-day">25 Jan<br><small>(Sunday)</small></td>
+              <td class="plan-time">Afternoon</td>
+              <td>College Home-coming</td>
+              <td>Register as per the college invitation.</td>
+            </tr>
+            <tr>
+              <td class="plan-day">25 Jan<br><small>(Sunday)</small></td>
+              <td class="plan-time">Evening</td>
+              <td>Gala Dinner</td>
+              <td>
+                <ul>
+                  <li>Contribute to the batch fund — INR 3,000</li>
+                  <li>Upload your journey in the PowerPoint (see 05 above)</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="plan-day">26 Jan<br><small>(Monday)</small></td>
+              <td class="plan-time">Morning</td>
+              <td>Check-out and Departure</td>
+              <td>Feel free to plan your next destination.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 

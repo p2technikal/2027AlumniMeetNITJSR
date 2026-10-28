@@ -132,6 +132,14 @@
       font-size: clamp(16px, 2vw, 19px);
     }
     .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+    .hero-reunion-image {
+      width: min(620px, 100%);
+      max-height: 390px;
+      margin-top: 24px;
+      border-radius: 6px;
+      object-fit: contain;
+      box-shadow: 0 14px 35px rgba(7, 24, 29, .22);
+    }
     .button {
       display: inline-flex;
       min-height: 48px;
@@ -494,7 +502,7 @@
   <section class="hero" id="top">
     <div class="shell hero-inner">
       <aside class="countdown" role="timer" aria-label="Time remaining until the reunion" aria-live="polite">
-        <div class="countdown-title" id="countdown-title">Coming Home In · IST</div>
+        <div class="countdown-title" id="countdown-title">Coming Home In</div>
         <div class="countdown-grid">
           <div class="countdown-unit"><span class="countdown-value" id="days">00</span><span class="countdown-label">Days</span></div>
           <div class="countdown-unit"><span class="countdown-value" id="hours">00</span><span class="countdown-label">Hours</span></div>
@@ -509,6 +517,7 @@
         <a class="button" href="#attendee-actions">Explore attendee actions</a>
         <a class="button button-outline" href="#get-in-touch">Help shape the reunion</a>
       </div>
+      <img class="hero-reunion-image" src="assets/hero-silver-jubilee.png" alt="Same gang, just more grey hair — 25 years Silver Jubilee Alumni Meet">
     </div>
   </section>
 

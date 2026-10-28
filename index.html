@@ -343,6 +343,17 @@
     .text-link:hover::after { transform: translateX(4px); }
     .gala-registration-link { text-decoration: underline; text-underline-offset: 3px; }
     .gala-registration-link::after { content: none; }
+    .gala-registration-number,
+    .gala-payment-number {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--teal);
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .gala-payment { margin-top: 18px; }
+    .gala-payment p { min-height: 0; margin-bottom: 8px; font-weight: 700; }
     .payment-qr {
       display: block;
       width: min(100%, 220px);
@@ -498,8 +509,15 @@
           <span class="card-number" aria-hidden="true">02</span>
           <h3>Gala Night (25th Jan) Details</h3>
           <p>Details and registration information for the 98 batch gala night.</p>
-          <a class="text-link gala-registration-link" href="https://docs.google.com/forms/d/e/1FAIpQLSetAZqlYaNjGVwuNvZPO7QMzN5zVc0ys6N78qeL8-1ho8f0zQ/viewform" target="_blank" rel="noopener noreferrer">NIT JSR Silver Jubilee Reunion 2027 — Registration Form</a>
-          <img class="payment-qr" src="assets/gala-night-payment-qr.jpeg" alt="UPI QR code for payment to Pranit Prakash">
+          <div class="gala-registration">
+            <strong class="gala-registration-number">2.1</strong>
+            <a class="text-link gala-registration-link" href="https://docs.google.com/forms/d/e/1FAIpQLSetAZqlYaNjGVwuNvZPO7QMzN5zVc0ys6N78qeL8-1ho8f0zQ/viewform" target="_blank" rel="noopener noreferrer">NIT JSR Silver Jubilee Reunion 2027 — Registration Form</a>
+          </div>
+          <div class="gala-payment">
+            <strong class="gala-payment-number">2.2</strong>
+            <p>Pay INR 3000 to below UPI</p>
+            <img class="payment-qr" src="assets/gala-night-upi-qr.png" alt="UPI QR code for Gala Night payment">
+          </div>
         </article>
         <article class="action-card photo-card">
           <span class="card-number" aria-hidden="true">03</span>

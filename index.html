@@ -79,6 +79,38 @@
     }
     .nav-links a:hover { color: var(--gold); }
 
+    .header-ribbon {
+      overflow: hidden;
+      border-top: 1px solid rgba(239, 199, 122, .16);
+      border-bottom: 1px solid rgba(239, 199, 122, .24);
+      background: linear-gradient(90deg, #eadfc5, #f7f4ec 50%, #eadfc5);
+    }
+    .ribbon-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      padding-block: 12px;
+    }
+    .ribbon-grid figure {
+      position: relative;
+      height: 150px;
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid rgba(16, 43, 51, .16);
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 8px 20px rgba(16, 43, 51, .12);
+    }
+    .ribbon-grid img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      background: #eadfc5;
+      transition: transform .25s ease;
+    }
+    .ribbon-grid figure:hover img { transform: scale(1.025); }
+
     .hero {
       position: relative;
       overflow: hidden;
@@ -373,6 +405,8 @@
     @media (max-width: 760px) {
       .nav-wrap { align-items: flex-start; flex-direction: column; padding-block: 17px; gap: 13px; }
       .nav-links { gap: 10px 19px; }
+      .ribbon-grid { gap: 7px; padding-block: 7px; }
+      .ribbon-grid figure { height: 112px; border-radius: 4px; }
       .hero-inner { min-height: 390px; padding-block: 62px 76px; }
       .countdown { position: relative; top: auto; right: auto; width: min(390px, 100%); margin-bottom: 26px; }
       .event-strip { grid-template-columns: 1fr; margin-top: -22px; }
@@ -388,6 +422,8 @@
     }
     @media (max-width: 520px) {
       .shell { width: min(100% - 30px, 1120px); }
+      .header-ribbon { overflow-x: auto; }
+      .ribbon-grid { grid-template-columns: repeat(3, 155px); }
       .nav-links { gap: 8px 14px; }
       .nav-links a { font-size: 13px; }
       .hero-actions { align-items: stretch; flex-direction: column; width: 100%; }
@@ -422,6 +458,14 @@
       </nav>
     </div>
   </header>
+
+  <aside class="header-ribbon" aria-label="Reunion memories">
+    <div class="shell ribbon-grid">
+      <figure><img src="assets/reunion-ribbon-1.png" alt="Do not miss the reunion encouragement poster"></figure>
+      <figure><img src="assets/reunion-ribbon-2.png" alt="Class reunion nostalgia poster"></figure>
+      <figure><img src="assets/reunion-ribbon-3.png" alt="Make this reunion legendary poster"></figure>
+    </div>
+  </aside>
 
   <section class="hero" id="top">
     <div class="shell hero-inner">

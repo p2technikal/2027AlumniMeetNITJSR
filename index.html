@@ -397,6 +397,25 @@
     }
     .help-panel h2 { margin-bottom: 12px; font-size: clamp(32px, 4vw, 43px); line-height: 1.1; }
     .help-panel p { margin-bottom: 0; color: #506367; }
+    .help-photo {
+      width: 100%;
+      max-height: 300px;
+      object-fit: contain;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+    }
+    .whatsapp-link {
+      display: inline-block;
+      margin-top: 12px;
+      color: #fff;
+      background: #128c7e;
+      border-radius: 4px;
+      padding: 9px 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .whatsapp-link:hover { background: #075e54; text-decoration: underline; text-underline-offset: 3px; }
     .help-aside {
       align-self: center;
       padding-left: 26px;
@@ -651,10 +670,11 @@
     <section class="help-panel" id="get-in-touch" aria-labelledby="help-title">
       <div>
         <p class="section-kicker">Let’s make it happen</p>
-        <h2 id="help-title">Have a question or an idea?</h2>
-        <p>We’re bringing the 98 batch back together. If you can help with planning, reconnecting classmates, or collecting memories, we’d love to hear from you.</p>
+        <h2 id="help-title">Any Questions or Interested to organize?</h2>
+        <p>Join us on</p>
+        <a class="whatsapp-link" href="https://chat.whatsapp.com/Lc3x9KRpElwFdGt9w8tNcG" target="_blank" rel="noopener noreferrer">WhatsApp Channel</a>
       </div>
-      <p class="help-aside">Organizer contact details and the batch communication-group link will be added here. Check back for updates.</p>
+      <img class="help-photo" src="assets/you-cant-miss-it.png" alt="If you don't come to the reunion, you'll regret it">
     </section>
   </main>
 

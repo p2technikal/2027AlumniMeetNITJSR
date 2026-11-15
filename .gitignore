@@ -1,0 +1,4 @@
+reunion-event-assistant/.venv/
+reunion-event-assistant/**/__pycache__/
+reunion-event-assistant/**/.env
+*.pyc

@@ -1,0 +1,254 @@
+
+/* =========================================
+   REUNION CHAT WIDGET
+========================================= */
+
+#reunion-chat-widget,
+#reunion-chat-widget * {
+    box-sizing: border-box;
+}
+
+#reunion-chat-widget {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 9999;
+    width: 60px;
+    height: 60px;
+    pointer-events: none;
+    font-family: Arial, sans-serif;
+}
+
+/* Floating chat button */
+
+#reunion-chat-widget .chat-toggle {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 10001;
+
+    width: 60px;
+    height: 60px;
+
+    border: none;
+    border-radius: 50%;
+    background: #0d9488;
+    color: white;
+
+    font-size: 25px;
+    cursor: pointer;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    pointer-events: auto;
+}
+
+/* Hide floating button while chat is open */
+
+#reunion-chat-widget:has(.chat-window.open) .chat-toggle {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Chat window */
+
+#reunion-chat-widget .chat-window {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 75px;
+
+    width: min(380px, calc(100vw - 30px));
+    height: 520px;
+    max-height: calc(100dvh - 110px);
+
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+    overflow: hidden;
+
+    flex-direction: column;
+    pointer-events: auto;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+#reunion-chat-widget .chat-window.open {
+    display: flex;
+}
+
+/* Header */
+
+#reunion-chat-widget .chat-header {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 16px 18px;
+    background: #0d9488;
+    color: white;
+}
+
+#reunion-chat-widget .chat-header strong {
+    display: block;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+#reunion-chat-widget .chat-header small {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+#reunion-chat-widget .chat-header button {
+    flex: 0 0 auto;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* Message area */
+
+#reunion-chat-widget .chat-messages {
+    flex: 1 1 auto;
+    min-height: 0;
+
+    padding: 16px;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    background: #ffffff;
+}
+
+/* Message bubbles */
+
+#reunion-chat-widget .bot-message,
+#reunion-chat-widget .user-message {
+    max-width: 85%;
+    padding: 11px 14px;
+    border-radius: 14px;
+
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 400;
+
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+#reunion-chat-widget .bot-message {
+    align-self: flex-start;
+    background: #f0f3f3;
+    color: #243333;
+    border-bottom-left-radius: 4px;
+}
+
+#reunion-chat-widget .user-message {
+    align-self: flex-end;
+    background: #0d9488;
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+/* Suggested questions */
+
+#reunion-chat-widget .chat-suggestions {
+    flex: 0 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+
+    padding: 10px 14px;
+    background: #ffffff;
+}
+
+#reunion-chat-widget .chat-suggestions button {
+    background: white;
+    border: 1px solid #0d9488;
+    color: #08796f;
+
+    border-radius: 18px;
+    padding: 7px 11px;
+
+    font-size: 12px;
+    line-height: 1.3;
+    cursor: pointer;
+}
+
+#reunion-chat-widget .chat-suggestions button:hover {
+    background: #e7f5f3;
+}
+
+/* Input area */
+
+#reunion-chat-widget .chat-input-area {
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 12px;
+    border-top: 1px solid #e5e5e5;
+    background: white;
+}
+
+#reunion-chat-widget .chat-input-area input {
+    flex: 1;
+    min-width: 0;
+    height: 43px;
+
+    padding: 10px 14px;
+    border: 1px solid #d5dada;
+    border-radius: 24px;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    outline-color: #0d9488;
+}
+
+#reunion-chat-widget .chat-input-area button {
+    flex: 0 0 43px;
+
+    display: grid;
+    place-items: center;
+
+    width: 43px;
+    height: 43px;
+
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+
+    background: #0d9488;
+    color: white;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+/* Mobile layout */
+
+@media (max-width: 480px) {
+    #reunion-chat-widget {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    #reunion-chat-widget .chat-window {
+        right: 0;
+        bottom: 72px;
+
+        width: calc(100vw - 30px);
+        height: min(520px, calc(100dvh - 105px));
+    }
+}

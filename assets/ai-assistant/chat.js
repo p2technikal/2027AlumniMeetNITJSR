@@ -1,4 +1,4 @@
-
+const API_URL = "https://nitjsr-reunion-assistant.onrender.com/chat";
 const toggleButton = document.getElementById("chat-toggle");
 const closeButton = document.getElementById("chat-close");
 const chatWindow = document.getElementById("chat-window");
@@ -56,7 +56,7 @@ async function sendMessage(question) {
     chatMessages.scrollTop = chatMessages.scrollHeight;
 
     try {
-        const response = await fetch("http://127.0.0.1:8000/chat", {
+        const response = await fetch(API_URL, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
